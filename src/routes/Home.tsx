@@ -1,5 +1,6 @@
 import React from "react";
 import MovieCarousel from "../components/MovieCarousel";
+import ExploreButton from "../components/ExploreButton";
 import {
   useFetchPopular,
   useFetchNowPlay,
@@ -16,16 +17,16 @@ const Home: React.FC = () => {
 
   return (
     <div>
-      <div>Popular Movies</div>
+      <ExploreButton title="Popular Movies" category="popular" />
       <MovieCarousel list={popularList} />
 
-      <div>Now Playing</div>
+      <ExploreButton title="Now Playing" category="nowPlaying" />
       <MovieCarousel list={nowPlayingList} />
 
-      <div>Top Rated</div>
+      <ExploreButton title="Top Rated" category="topRated" />
       <MovieCarousel list={topRatedList} />
 
-      <div>Upcoming</div>
+      <ExploreButton title="Upcoming" category="upcoming" />
       <MovieCarousel list={upcomingList} />
     </div>
   );

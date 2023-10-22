@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { RouterProvider, createBrowserRouter, Outlet } from "react-router-dom";
 import { StoreContextProvider } from "./stores/StoreContext";
+import Category from "./routes/Category";
 import Home from "./routes/Home";
 import Search from "./routes/Search";
 import MovieDetails from "./routes/MovieDetails";
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
       {
         path: "/details",
         element: <MovieDetails />,
+      },
+      {
+        path: "/category",
+        element: <Category />,
       },
     ],
   },

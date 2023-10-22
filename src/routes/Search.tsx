@@ -3,8 +3,6 @@ import { useLocation } from "react-router-dom";
 import MovieList from "../components/MovieList";
 import { useFetchSearch } from "../hooks/search";
 
-// import "./Search.css";
-
 const Search: React.FC = () => {
   const location = useLocation();
 

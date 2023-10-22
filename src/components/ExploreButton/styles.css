@@ -1,0 +1,20 @@
+.explore-button-container {
+  cursor: pointer;
+  display: flex;
+}
+
+.explore-button-subtext {
+  display: none;
+}
+
+.explore-button-title:hover + .explore-button-subtext {
+  color: aqua;
+  display: block;
+  padding-left: 10px;
+}
+
+.explore-button-subtext:hover {
+  color: aqua;
+  display: block;
+  padding-left: 10px;
+}
