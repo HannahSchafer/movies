@@ -26,7 +26,7 @@ const MovieCarousel: React.FC<Props> = ({ list }) =>
       loop
     >
       {list.map((movie) => (
-        <Carousel.Slide>
+        <Carousel.Slide key={movie.id}>
           <img
             src={`${posterPath}${movie.poster_path}`}
             alt={movie.title}

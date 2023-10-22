@@ -1,50 +1,20 @@
 import React, { useCallback, useEffect, useState } from "react";
 import MovieCarousel from "./components/MovieCarousel";
 import { Movie } from "./types";
+import { getUpcomingMovies } from "./server";
 import {
-  getPopularMovies,
-  getNowPlayingMovies,
-  getTopRatedMovies,
-  getUpcomingMovies,
-} from "./server";
+  useFetchPopular,
+  useFetchNowPlay,
+  useFetchTopRated,
+  useFetchUpcoming,
+} from "./hooks/movies";
 import "./Home.css";
 
 const Home: React.FC = () => {
-  const [popularList, setPopularList] = useState<Movie[]>();
-  const [nowPlayingList, setNowPlayingList] = useState<Movie[]>();
-  const [topRatedList, setTopRatedList] = useState<Movie[]>();
-  const [upcomingList, setUpcomingList] = useState<Movie[]>();
-
-  const fetchPopular = useCallback(async () => {
-    const movies = await getPopularMovies();
-
-    setPopularList(movies.results);
-  }, []);
-
-  const fetchNowPlaying = useCallback(async () => {
-    const movies = await getNowPlayingMovies();
-
-    setNowPlayingList(movies.results);
-  }, []);
-
-  const fetchTopRated = useCallback(async () => {
-    const movies = await getTopRatedMovies();
-
-    setTopRatedList(movies.results);
-  }, []);
-
-  const fetchUpcoming = useCallback(async () => {
-    const movies = await getUpcomingMovies();
-
-    setUpcomingList(movies.results);
-  }, []);
-
-  useEffect(() => {
-    fetchPopular();
-    fetchNowPlaying();
-    fetchTopRated();
-    fetchUpcoming();
-  }, [fetchPopular, fetchNowPlaying, fetchTopRated, fetchUpcoming]);
+  const { popularList, isLoadingPopular, errorPopular } = useFetchPopular();
+  const { nowPlayingList, isLoadingNowPlay, errorNowPlay } = useFetchNowPlay();
+  const { topRatedList, isLoadingTopRated, errorTopRated } = useFetchTopRated();
+  const { upcomingList, isLoadingUpcoming, errorUpcoming } = useFetchUpcoming();
 
   return (
     <div>
