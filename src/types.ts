@@ -21,3 +21,7 @@ export type Movies = {
   page: number;
   total_pages: number;
 };
+
+export type MovieLists = {
+  [key: string]: Movie[];
+};

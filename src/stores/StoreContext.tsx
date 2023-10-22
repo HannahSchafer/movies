@@ -1,5 +1,5 @@
 import { createContext, useContext, useReducer } from "react";
-import { Movie } from "../types";
+import { Movie, MovieLists } from "../types";
 
 export enum ActionTypes {
   SET_SEARCH_TERM = "SET_SEARCH_TERM",
@@ -11,7 +11,7 @@ export enum ActionTypes {
 export const StoreContext = createContext<any | undefined>(undefined);
 
 type StoreState = {
-  movieLists: any;
+  movieLists: MovieLists;
   searchTerm: string;
   selectedMovie?: number;
   selectedCategory: string;
