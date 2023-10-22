@@ -26,5 +26,5 @@ export const getMovies = (category: string, params: string): Promise<any> =>
 export const getMovieDetails = (movie_id: number): Promise<MovieDetail> =>
   makeRequest(`/movie/${movie_id}`);
 
-export const getSearchMovie = (params: string): Promise<PopularMovies> =>
+export const getSearchMovie = (params: string): Promise<any> =>
   makeRequest("/search/movie", params);
