@@ -1,19 +1,30 @@
 import React from "react";
 import MovieCarousel from "../components/MovieCarousel";
 import ExploreButton from "../components/ExploreButton";
-import {
-  useFetchPopular,
-  useFetchNowPlay,
-  useFetchTopRated,
-  useFetchUpcoming,
-} from "../hooks/movies";
+import { useFetchMovies } from "../hooks/movies";
 import "./Home.css";
 
 const Home: React.FC = () => {
-  const { popularList, isLoadingPopular, errorPopular } = useFetchPopular();
-  const { nowPlayingList, isLoadingNowPlay, errorNowPlay } = useFetchNowPlay();
-  const { topRatedList, isLoadingTopRated, errorTopRated } = useFetchTopRated();
-  const { upcomingList, isLoadingUpcoming, errorUpcoming } = useFetchUpcoming();
+  const {
+    list: popularList,
+    isLoading: isLoadingPopular,
+    hasError: errorPopular,
+  } = useFetchMovies("popular");
+  const {
+    list: nowPlayingList,
+    isLoading: isLoadingNowPlay,
+    hasError: errorNowPlay,
+  } = useFetchMovies("now_playing");
+  const {
+    list: topRatedList,
+    isLoading: isLoadingTopRated,
+    hasError: errorTopRated,
+  } = useFetchMovies("top_rated");
+  const {
+    list: upcomingList,
+    isLoading: isLoadingUpcoming,
+    hasError: errorUpcoming,
+  } = useFetchMovies("upcoming");
 
   return (
     <div>

@@ -20,17 +20,8 @@ async function makeRequest(path: string, params?: string) {
   }
 }
 
-export const getPopularMovies = (): Promise<PopularMovies> =>
-  makeRequest("/movie/popular");
-
-export const getNowPlayingMovies = (): Promise<PopularMovies> =>
-  makeRequest("/movie/now_playing");
-
-export const getTopRatedMovies = (): Promise<PopularMovies> =>
-  makeRequest("/movie/top_rated");
-
-export const getUpcomingMovies = (): Promise<PopularMovies> =>
-  makeRequest("/movie/upcoming");
+export const getMovies = (category: string): Promise<PopularMovies> =>
+  makeRequest(`/movie/${category}`);
 
 export const getMovieDetails = (movie_id: number): Promise<MovieDetail> =>
   makeRequest(`/movie/${movie_id}`);
