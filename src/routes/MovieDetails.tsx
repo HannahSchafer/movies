@@ -2,6 +2,18 @@ import React from "react";
 import { useStoreContext } from "../stores/StoreContext";
 import { useFetchMovieDetails } from "../hooks/movie";
 import getString from "../utils/getString";
+import { MovieDetail } from "../types";
+import "./MovieDetails.css";
+
+const DETAILS = [
+  "title",
+  "overview",
+  "release_date",
+  "runtime",
+  "vote_average",
+  "budget",
+  "revenue",
+];
 
 const MovieDetails: React.FC = () => {
   const {
@@ -13,28 +25,14 @@ const MovieDetails: React.FC = () => {
   }
   return (
     <div>
-      <div>Movie details</div>
-      <div>
-        {getString("title")}: {details.title}
-      </div>
-      <div>
-        {getString("overview")}: {details.overview}
-      </div>
-      <div>
-        {getString("releaseDate")}: {details.release_date}
-      </div>
-      <div>
-        {getString("runtime")}: {details.runtime}
-      </div>
-      <div>
-        {getString("voteAverage")}: {details.vote_average}
-      </div>
-      <div>
-        {getString("budget")}: {details.budget}
-      </div>
-      <div>
-        {getString("revenue")}: {details.revenue}
-      </div>
+      <div className="detail-title">Movie details</div>
+      {DETAILS.map((detail, i) => {
+        return (
+          <div className="detail-item" key={i}>
+            {getString(detail)}: {details[detail as keyof MovieDetail]}
+          </div>
+        );
+      })}
     </div>
   );
 };
