@@ -9,36 +9,36 @@ const Home: React.FC = () => {
     list: popularList,
     isLoading: isLoadingPopular,
     hasError: errorPopular,
-  } = useFetchMovies("popular");
-  const {
-    list: nowPlayingList,
-    isLoading: isLoadingNowPlay,
-    hasError: errorNowPlay,
-  } = useFetchMovies("now_playing");
-  const {
-    list: topRatedList,
-    isLoading: isLoadingTopRated,
-    hasError: errorTopRated,
-  } = useFetchMovies("top_rated");
-  const {
-    list: upcomingList,
-    isLoading: isLoadingUpcoming,
-    hasError: errorUpcoming,
-  } = useFetchMovies("upcoming");
+  } = useFetchMovies("popular", 1);
+  // const {
+  //   list: nowPlayingList,
+  //   isLoading: isLoadingNowPlay,
+  //   hasError: errorNowPlay,
+  // } = useFetchMovies("now_playing");
+  // const {
+  //   list: topRatedList,
+  //   isLoading: isLoadingTopRated,
+  //   hasError: errorTopRated,
+  // } = useFetchMovies("top_rated");
+  // const {
+  //   list: upcomingList,
+  //   isLoading: isLoadingUpcoming,
+  //   hasError: errorUpcoming,
+  // } = useFetchMovies("upcoming");
 
   return (
     <div>
       <ExploreButton title="Popular Movies" category="popular" />
       <MovieCarousel list={popularList} />
 
-      <ExploreButton title="Now Playing" category="nowPlaying" />
+      {/* <ExploreButton title="Now Playing" category="nowPlaying" />
       <MovieCarousel list={nowPlayingList} />
 
       <ExploreButton title="Top Rated" category="topRated" />
       <MovieCarousel list={topRatedList} />
 
       <ExploreButton title="Upcoming" category="upcoming" />
-      <MovieCarousel list={upcomingList} />
+      <MovieCarousel list={upcomingList} /> */}
     </div>
   );
 };

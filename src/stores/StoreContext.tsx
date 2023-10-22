@@ -14,7 +14,7 @@ type StoreState = {
   movieLists: any;
   searchTerm: string;
   selectedMovie?: number;
-  selectedCategory?: string;
+  selectedCategory: string;
 };
 
 type ActionType = {
@@ -67,7 +67,7 @@ const defaultStoreState: StoreState = {
   movieLists: {},
   searchTerm: "",
   selectedMovie: undefined,
-  selectedCategory: undefined,
+  selectedCategory: "",
 };
 
 type ContextStore = {

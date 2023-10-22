@@ -5,16 +5,29 @@ import "./styles.css";
 
 type Props = {
   list?: IMovie[];
+  lastElement: any;
 };
 
-const MovieList: React.FC<Props> = ({ list }) =>
+const MovieList: React.FC<Props> = ({ list, lastElement }) =>
   list ? (
     <div className="movie-list">
-      {list.map((movie) => {
+      {list.map((movie, index) => {
         if (!movie.poster_path) {
           return;
         }
-        return <Movie key={movie.id} movie={movie} />;
+        if (list.length === index + 1) {
+          return (
+            <div ref={lastElement} key={movie.id}>
+              <Movie movie={movie} />
+            </div>
+          );
+        } else {
+          return (
+            <div key={index}>
+              <Movie movie={movie} />
+            </div>
+          );
+        }
       })}
     </div>
   ) : null;

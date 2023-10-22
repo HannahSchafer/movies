@@ -20,8 +20,8 @@ async function makeRequest(path: string, params?: string) {
   }
 }
 
-export const getMovies = (category: string): Promise<PopularMovies> =>
-  makeRequest(`/movie/${category}`);
+export const getMovies = (category: string, params: string): Promise<any> =>
+  makeRequest(`/movie/${category}`, params);
 
 export const getMovieDetails = (movie_id: number): Promise<MovieDetail> =>
   makeRequest(`/movie/${movie_id}`);
