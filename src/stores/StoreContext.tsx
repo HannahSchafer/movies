@@ -1,13 +1,16 @@
 import { createContext, useContext, useEffect, useReducer } from "react";
+import { Movie } from "../types";
 
 export enum ActionTypes {
   SET_SEARCH_TERM = "SET_SEARCH_TERM",
+  SET_SELECTED_MOVIE = "SET_SELECTED_MOVIE",
 }
 
 export const StoreContext = createContext<any | undefined>(undefined);
 
 type StoreState = {
   searchTerm: string;
+  selectedMovie?: number;
 };
 
 type ActionType = {
@@ -27,6 +30,12 @@ const reducer = (state: StoreState, action: ActionType): StoreState => {
         searchTerm: action.payload,
       };
     }
+    case ActionTypes.SET_SELECTED_MOVIE: {
+      return {
+        ...state,
+        selectedMovie: action.payload,
+      };
+    }
     default:
       console.warn("Not a valid action type");
       return state;
@@ -35,12 +44,14 @@ const reducer = (state: StoreState, action: ActionType): StoreState => {
 
 const defaultStoreState: StoreState = {
   searchTerm: "",
+  selectedMovie: undefined,
 };
 
 type ContextStore = {
   state: StoreState;
   actions: {
     setSearchTerm: (term: string) => void;
+    setSelectedMovie: (movieId: number) => void;
   };
 };
 
@@ -61,12 +72,19 @@ export function StoreContextProvider({ children }: StoreContextProviderProps) {
   const store: ContextStore = {
     state: {
       searchTerm: state.searchTerm,
+      selectedMovie: state.selectedMovie,
     },
     actions: {
       setSearchTerm: (term: string) => {
         dispatch({
           type: ActionTypes.SET_SEARCH_TERM,
           payload: term,
+        });
+      },
+      setSelectedMovie: (movieId: number) => {
+        dispatch({
+          type: ActionTypes.SET_SELECTED_MOVIE,
+          payload: movieId,
         });
       },
     },

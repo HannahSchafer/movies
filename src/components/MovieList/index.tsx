@@ -3,8 +3,6 @@ import { Movie as IMovie } from "../../types";
 import Movie from "../Movie";
 import "./styles.css";
 
-const posterPath = "https://image.tmdb.org/t/p/w500/";
-
 type Props = {
   list?: IMovie[];
 };

@@ -1,4 +1,4 @@
-import { PopularMovies } from "./types";
+import { PopularMovies, MovieDetail } from "./types";
 
 const BASE_URL = "https://api.themoviedb.org/3";
 const API_KEY = "808cabea1582db02810d3c942e6781f8";
@@ -31,6 +31,9 @@ export const getTopRatedMovies = (): Promise<PopularMovies> =>
 
 export const getUpcomingMovies = (): Promise<PopularMovies> =>
   makeRequest("/movie/upcoming");
+
+export const getMovieDetails = (movie_id: number): Promise<MovieDetail> =>
+  makeRequest(`/movie/${movie_id}`);
 
 export const getSearchMovie = (params: string): Promise<PopularMovies> =>
   makeRequest("/search/movie", params);
