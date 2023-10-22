@@ -4,6 +4,7 @@ import { RouterProvider, createBrowserRouter, Outlet } from "react-router-dom";
 import { StoreContextProvider } from "./stores/StoreContext";
 import Home from "./routes/Home";
 import Search from "./routes/Search";
+import MovieDetails from "./routes/MovieDetails";
 import HeaderSearch from "./components/Header";
 import { MantineProvider } from "@mantine/core";
 import "@mantine/core/styles.css";
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: "/search",
         element: <Search />,
+      },
+      {
+        path: "/details",
+        element: <MovieDetails />,
       },
     ],
   },

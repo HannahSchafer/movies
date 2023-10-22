@@ -3,21 +3,14 @@ import "@mantine/carousel/styles.css";
 import { Autocomplete, Group, rem } from "@mantine/core";
 import "./styles.css";
 import { IconSearch } from "@tabler/icons-react";
-import {
-  Link,
-  useNavigate,
-  useLocation,
-  createSearchParams,
-} from "react-router-dom";
+import { Link, useNavigate, createSearchParams } from "react-router-dom";
 import { useStoreContext } from "../../stores/StoreContext";
 
 const links = [{ link: "/", label: "Home" }];
 
 const HeaderSearch = () => {
   const navigate = useNavigate();
-  const location = useLocation();
 
-  console.log("loc", location);
   const {
     state: { searchTerm },
     actions: { setSearchTerm },

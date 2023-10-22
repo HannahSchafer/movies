@@ -1,31 +1,7 @@
-.root {
-  /* padding: 32px;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 200px);
-  grid-auto-rows: auto;
-  gap: 16px; */
-}
-
 .slide {
-  /* background-color: blue; */
-  /* outline: 2px solid red; */
-  /* margin: 10px !important; */
   height: 300px !important;
-}
-
-.container {
-  /* height: 500px !important; */
 }
 
 .viewport {
   height: 300px !important;
-}
-
-.movie-poster {
-  width: 200px;
-  transition: 0.2s all;
-}
-
-.movie-poster:hover {
-  transform: scale(1.05);
 }

@@ -1,11 +1,12 @@
 import React from "react";
-import { Movie } from "../../types";
+import { Movie as IMovie } from "../../types";
+import Movie from "../Movie";
 import "./styles.css";
 
 const posterPath = "https://image.tmdb.org/t/p/w500/";
 
 type Props = {
-  list?: Movie[];
+  list?: IMovie[];
 };
 
 const MovieList: React.FC<Props> = ({ list }) =>
@@ -15,16 +16,7 @@ const MovieList: React.FC<Props> = ({ list }) =>
         if (!movie.poster_path) {
           return;
         }
-        const { title } = movie;
-
-        return (
-          <img
-            key={movie.id}
-            src={`${posterPath}${movie.poster_path}`}
-            alt={title}
-            className="movie-poster"
-          />
-        );
+        return <Movie key={movie.id} movie={movie} />;
       })}
     </div>
   ) : null;

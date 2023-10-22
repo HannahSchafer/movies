@@ -1,21 +1,20 @@
 import React from "react";
-import { Movie } from "../../types";
+import { Movie as IMovie } from "../../types";
+import Movie from "../Movie";
 import "./styles.css";
 import { Carousel } from "@mantine/carousel";
 
 const posterPath = "https://image.tmdb.org/t/p/w500/";
 
 type Props = {
-  list?: Movie[];
+  list?: IMovie[];
 };
 
 const MovieCarousel: React.FC<Props> = ({ list }) =>
   list ? (
     <Carousel
       classNames={{
-        root: "root",
         slide: "slide",
-        container: "container",
         viewport: "viewport",
       }}
       withIndicators
@@ -27,11 +26,7 @@ const MovieCarousel: React.FC<Props> = ({ list }) =>
     >
       {list.map((movie) => (
         <Carousel.Slide key={movie.id}>
-          <img
-            src={`${posterPath}${movie.poster_path}`}
-            alt={movie.title}
-            className="movie-poster"
-          />
+          <Movie movie={movie} />
         </Carousel.Slide>
       ))}
     </Carousel>

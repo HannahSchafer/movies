@@ -1,0 +1,9 @@
+.movie-poster {
+  width: 200px;
+  transition: 0.2s all;
+}
+
+.movie-poster:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
