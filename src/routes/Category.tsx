@@ -2,6 +2,7 @@ import React, { useState, useCallback, useRef } from "react";
 import { useStoreContext } from "../stores/StoreContext";
 import MovieList from "../components/MovieList";
 import { useFetchMovies } from "../hooks/movies";
+import { CATEGORIES } from "../config";
 import "./MovieDetails.css";
 
 const Category: React.FC = () => {
@@ -37,7 +38,7 @@ const Category: React.FC = () => {
 
   return (
     <div>
-      <div>{selectedCategory}</div>
+      <div>{CATEGORIES[selectedCategory]}</div>
       <MovieList list={list} lastElement={lastMovieElement} />
     </div>
   );

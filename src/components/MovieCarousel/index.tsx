@@ -4,8 +4,6 @@ import Movie from "../Movie";
 import "./styles.css";
 import { Carousel } from "@mantine/carousel";
 
-const posterPath = "https://image.tmdb.org/t/p/w500/";
-
 type Props = {
   list?: IMovie[];
 };

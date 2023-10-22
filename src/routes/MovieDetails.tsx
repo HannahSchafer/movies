@@ -25,7 +25,7 @@ const MovieDetails: React.FC = () => {
   }
   return (
     <div>
-      <div className="detail-title">Movie details</div>
+      <div className="title">Movie details</div>
       {DETAILS.map((detail, i) => {
         return (
           <div className="detail-item" key={i}>
