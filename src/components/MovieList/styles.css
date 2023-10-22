@@ -1,0 +1,16 @@
+.movie-list {
+  padding: 32px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 200px);
+  grid-auto-rows: auto;
+  gap: 16px;
+}
+
+.movie-poster {
+  width: 200px;
+  transition: 0.2s all;
+}
+
+.movie-poster:hover {
+  transform: scale(1.05);
+}
