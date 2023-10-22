@@ -16,6 +16,8 @@ export type MovieDetail = {
   vote_average: number;
 };
 
-export type PopularMovies = {
+export type Movies = {
   results: Movie[];
+  page: number;
+  total_pages: number;
 };

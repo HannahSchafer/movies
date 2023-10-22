@@ -1,4 +1,4 @@
-import { PopularMovies, MovieDetail } from "./types";
+import { Movies, MovieDetail } from "./types";
 
 const BASE_URL = "https://api.themoviedb.org/3";
 const API_KEY = "808cabea1582db02810d3c942e6781f8";
@@ -20,11 +20,11 @@ async function makeRequest(path: string, params?: string) {
   }
 }
 
-export const getMovies = (category: string, params: string): Promise<any> =>
+export const getMovies = (category: string, params: string): Promise<Movies> =>
   makeRequest(`/movie/${category}`, params);
 
 export const getMovieDetails = (movie_id: number): Promise<MovieDetail> =>
   makeRequest(`/movie/${movie_id}`);
 
-export const getSearchMovie = (params: string): Promise<any> =>
+export const getSearchMovie = (params: string): Promise<Movies> =>
   makeRequest("/search/movie", params);

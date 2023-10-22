@@ -37,6 +37,7 @@ const Category: React.FC = () => {
 
   return (
     <div>
+      <div>{selectedCategory}</div>
       <MovieList list={list} lastElement={lastMovieElement} />
     </div>
   );

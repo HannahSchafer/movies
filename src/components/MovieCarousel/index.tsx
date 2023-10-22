@@ -24,8 +24,8 @@ const MovieCarousel: React.FC<Props> = ({ list }) =>
       align="start"
       loop
     >
-      {list.map((movie) => (
-        <Carousel.Slide key={movie.id}>
+      {list.map((movie, index) => (
+        <Carousel.Slide key={index}>
           <Movie movie={movie} />
         </Carousel.Slide>
       ))}
