@@ -19,6 +19,7 @@ const MovieList: React.FC<Props> = ({ list }) =>
 
         return (
           <img
+            key={movie.id}
             src={`${posterPath}${movie.poster_path}`}
             alt={title}
             className="movie-poster"

@@ -16,7 +16,6 @@ type ActionType = {
 };
 
 type StoreContextProviderProps = {
-  searchTerm: string;
   children?: any;
 };
 
