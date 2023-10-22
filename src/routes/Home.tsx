@@ -26,6 +26,7 @@ const Home: React.FC = () => {
     hasError: errorUpcoming,
   } = useFetchMovies("upcoming", 1);
 
+  // TODO: Add skeleton loading components and error states
   return (
     <div>
       <ExploreButton title="Popular Movies" category="popular" />
@@ -34,6 +35,7 @@ const Home: React.FC = () => {
       <ExploreButton title="Now Playing" category="nowPlaying" />
       <MovieCarousel list={nowPlayingList} />
 
+      {/* TODO: Lazy load all lists below the fold here */}
       <ExploreButton title="Top Rated" category="topRated" />
       <MovieCarousel list={topRatedList} />
 
