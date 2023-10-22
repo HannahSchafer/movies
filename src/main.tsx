@@ -1,25 +1,47 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import Home from "./Home";
+import { RouterProvider, createBrowserRouter, Outlet } from "react-router-dom";
+import { StoreContextProvider } from "./stores/StoreContext";
+import Home from "./routes/Home";
+import Search from "./routes/Search";
+import HeaderSearch from "./components/Header";
+import { MantineProvider } from "@mantine/core";
 import "@mantine/core/styles.css";
 import "@mantine/carousel/styles.css";
-import { MantineProvider } from "@mantine/core";
 import "./main.css";
+
+const HeaderLayout = () => (
+  <>
+    <HeaderSearch />
+    <Outlet />
+  </>
+);
 
 const router = createBrowserRouter([
   {
+    element: <HeaderLayout />,
     path: "/",
-    element: <Home />,
+    children: [
+      {
+        index: true,
+        element: <Home />,
+      },
+      {
+        path: "/search",
+        element: <Search />,
+      },
+    ],
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <MantineProvider>
-      <div className="app-container">
-        <RouterProvider router={router} />
-      </div>
-    </MantineProvider>
+    <div className="app-container">
+      <MantineProvider>
+        <StoreContextProvider>
+          <RouterProvider router={router} />
+        </StoreContextProvider>
+      </MantineProvider>
+    </div>
   </React.StrictMode>
 );

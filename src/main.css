@@ -11,5 +11,6 @@ body {
 }
 
 .app-container {
+  background-color: #000;
   padding: 40px;
 }

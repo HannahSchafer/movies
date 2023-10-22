@@ -12,6 +12,9 @@ const MovieList: React.FC<Props> = ({ list }) =>
   list ? (
     <div className="movie-list">
       {list.map((movie) => {
+        if (!movie.poster_path) {
+          return;
+        }
         const { title } = movie;
 
         return (
