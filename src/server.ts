@@ -1,7 +1,7 @@
 import { Movies, MovieDetail } from "./types";
 
 const BASE_URL = "https://api.themoviedb.org/3";
-const API_KEY = "808cabea1582db02810d3c942e6781f8";
+const API_KEY = "";
 
 async function makeRequest(path: string, params?: string) {
   let url = `${BASE_URL}${path}?api_key=${API_KEY}`;
