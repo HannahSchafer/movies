@@ -61,7 +61,7 @@ const HeaderSearch = () => {
             }
             visibleFrom="xs"
           />
-          <button onClick={() => handleChange("")}>X</button>
+          {/* <button onClick={() => handleChange("")}>X</button> */}
         </Group>
       </div>
     </header>

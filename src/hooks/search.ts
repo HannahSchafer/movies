@@ -15,7 +15,7 @@ export const useFetchSearch = (params: string, pageNumber: number) => {
       if (result instanceof Error) {
         setHasError(true);
       } else {
-        setList((prev) => [...prev, ...result.results]);
+        setList((prev) => [...result.results, ...prev]);
         setHasMore(result.page < result.total_pages);
       }
       setIsLoading(false);
