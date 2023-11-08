@@ -2,7 +2,7 @@ import React, { useState, useCallback, useRef } from "react";
 import { useStoreContext } from "../stores/StoreContext";
 import MovieList from "../components/MovieList";
 import { useFetchMovies } from "../hooks/movies";
-import { CATEGORIES } from "../config";
+import { CATEGORIES, CATEGORY_BY_ID } from "../config";
 import "./MovieDetails.css";
 
 const Category: React.FC = () => {

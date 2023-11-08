@@ -14,3 +14,7 @@
 .movie-poster:hover {
   transform: scale(1.05);
 }
+
+.carousel-container {
+  padding-bottom: 20px;
+}

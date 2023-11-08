@@ -6,6 +6,7 @@ import { useFetchSearch } from "../hooks/search";
 const Search: React.FC = () => {
   const location = useLocation();
   const [pageNumber, setPageNumber] = useState(1);
+  // const { searchTerm } = useContext()
 
   const { list, isLoading, hasError, hasMore } = useFetchSearch(
     location.search,

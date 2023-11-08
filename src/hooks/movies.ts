@@ -19,7 +19,9 @@ export const useFetchMovies = (category: string, pageNumber: number) => {
       if (result instanceof Error) {
         setHasError(true);
       } else {
+        console.log("result", result);
         setList((prev) => [...prev, ...result.results]);
+        console.log("aft");
         setHasMore(result.page < result.total_pages);
         // setMovieLists(category, result.results);
       }

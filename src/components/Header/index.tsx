@@ -28,7 +28,7 @@ const HeaderSearch = () => {
   ));
 
   const handleChange = (val: string) => {
-    if (!val) {
+    if (val === "") {
       navigate(`/`);
     } else {
       navigate({
@@ -61,6 +61,7 @@ const HeaderSearch = () => {
             }
             visibleFrom="xs"
           />
+          <button onClick={() => handleChange("")}>X</button>
         </Group>
       </div>
     </header>

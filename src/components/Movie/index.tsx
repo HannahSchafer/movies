@@ -18,7 +18,7 @@ const Movie: React.FC<Props> = ({ movie }) => {
 
   const selectMovie = (movieId: number) => {
     setSelectedMovie(movieId);
-    navigate("/details");
+    navigate(`/details/${movieId}`);
   };
   return (
     <img

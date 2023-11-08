@@ -29,18 +29,26 @@ const Home: React.FC = () => {
   // TODO: Add skeleton loading components and error states
   return (
     <div>
-      <ExploreButton title="Popular Movies" category="popular" />
-      <MovieCarousel list={popularList} />
+      <div className="carousel-container">
+        <ExploreButton title="Popular Movies" category="popular" />
+        <MovieCarousel list={popularList} />
+      </div>
 
-      <ExploreButton title="Now Playing" category="nowPlaying" />
-      <MovieCarousel list={nowPlayingList} />
+      <div className="carousel-container">
+        <ExploreButton title="Now Playing" category="now_playing" />
+        <MovieCarousel list={nowPlayingList} />
+      </div>
 
       {/* TODO: Lazy load all lists below the fold here */}
-      <ExploreButton title="Top Rated" category="topRated" />
-      <MovieCarousel list={topRatedList} />
+      <div className="carousel-container">
+        <ExploreButton title="Top Rated" category="top_rated" />
+        <MovieCarousel list={topRatedList} />
+      </div>
 
-      <ExploreButton title="Upcoming" category="upcoming" />
-      <MovieCarousel list={upcomingList} />
+      <div className="carousel-container">
+        <ExploreButton title="Upcoming" category="upcoming" />
+        <MovieCarousel list={upcomingList} />
+      </div>
     </div>
   );
 };
